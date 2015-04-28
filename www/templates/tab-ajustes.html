@@ -1,0 +1,42 @@
+<ion-view view-title="Ajustes">
+  <ion-content class="padding">
+    	<div class="card" ng-show="error.messages.length != 0">
+		  <div class="item item-divider" style="background: #EF473A; color: white">
+		    Atenção
+		  </div>
+		  <div class="item item-text-wrap">
+		    <div ng-repeat='erro in error.messages'>{{erro}}</div>
+		  </div>
+		</div>
+    <div class="card">
+	  <div class="item item-divider">
+	    Placa do Veículo
+	  </div>
+	  <div class="item item-text-wrap"  ng-class="{'error': error.placa}">
+	    {{placa}}
+	    <div class="item item-input-inset">
+		    <label class="item-input-wrapper">    
+		      <input type="text" value="{{placa}}" ng-model="viatura.placa" />
+		    </label>
+		    <button class="button button-small button-assertive icon-left ion-checkmark" ng-click="salvarPlaca()">
+		      Salvar
+		    </button>
+
+		  </div>
+
+	  </div>
+	  <div class="item item-divider">
+	   Disponível
+	  </div>
+	  <div class="item item-text-wrap">
+
+	  	<label class="toggle toggle-assertive" ng-click="toggleArmazenarDados()">
+	       <input type="checkbox" ng-model="armazenarDados" ng-checked="{{armazenarDados}}">
+	       <div class="track">
+	         <div class="handle"></div>
+	       </div>
+	     </label>
+		  </div>
+	</div>
+  </ion-content>
+</ion-view>
